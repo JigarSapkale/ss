@@ -3,7 +3,7 @@ import QrReader from 'react-qr-reader';
 
 import styles from './Qrscan.module.css';
 
-const Qrscan = () => {
+const QrReader = () => {
 
 	const [result, setResult] = useState('No result');
 
@@ -36,4 +36,4 @@ const Qrscan = () => {
 	);
 }
 
-export default Qrscan;
+export default QrReader;
