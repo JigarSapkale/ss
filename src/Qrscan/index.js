@@ -8,12 +8,12 @@ const QrReader = () => {
 	const [result, setResult] = useState('No result');
 
 	const handleError = (err) => {
-		console.err(err)
+		console.err(err);
 	}
 
 	const handleScan = (result) => {
 		if(result){
-			setResult(result)
+			setResult(result);
 			window.location.assign(result);
 		}
 	}
