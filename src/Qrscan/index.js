@@ -14,7 +14,7 @@ const QrReader = () => {
 	const handleScan = (result) => {
 		if(result){
 			setResult(result);
-			window.location.assign(result);
+			window.location.assign(setresult);
 		}
 	}
 
