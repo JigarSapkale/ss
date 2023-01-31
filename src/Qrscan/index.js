@@ -13,7 +13,7 @@ const Qrscan = () => {
 
 	const handleScan = (result) => {
 		if(result){
-			setResult(result)
+			window.location.assign(result);
 		}
 	}
 
