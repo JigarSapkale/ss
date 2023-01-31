@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+/*import React, { useState, useEffect } from 'react';
 import { Html5Qrcode } from "html5-qrcode";
 
 import styles from './QrReader.module.css';
@@ -56,4 +56,38 @@ const QrReader = () => {
 	);
 }
 
-export default QrReader;
+export default QrReader;*/
+
+import React, { useState, useRef, useEffect } from 'react';
+import html5QrCode from 'html5-qrcode';
+import styles from './QrReader.module.css';
+
+const ReactQRCode = () => {
+  const qrCodeRef = useRef(null);
+  const [qrCodeValue, setQrCodeValue] = useState(null);
+
+  useEffect(() => {
+    html5QrCode.start(qrCodeRef.current, {
+      fps: 10,
+      qrbox: 250,
+      correctLevel: html5QrCode.CorrectLevel.H
+    }, (qrCode) => {
+      setQrCodeValue(qrCode);
+      const win = window.open(qrCode, '_blank');
+      win.focus();
+    });
+
+    return () => {
+      html5QrCode.stop();
+    };
+  }, []);
+
+  return (
+    <div>
+      <div ref={qrCodeRef} />
+      {qrCodeValue && <p>Scanned QR code: {qrCodeValue}</p>}
+    </div>
+  );
+};
+
+export default ReactQRCode;
