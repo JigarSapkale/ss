@@ -4,12 +4,12 @@ import './styles.css';
 
 import logo from './logo/Soccerball.svg';
 
-import FixedButton from './FixedButton';
-import Test from './Test';
+//import FixedButton from './FixedButton';
+// Test from './Test';
 import Fa from './Fa';
 import Qrscan from './Qrscan';
-import PriceTag from './PriceTag';
-import EWallet from './EWallet';
+//import PriceTag from './PriceTag';
+//import EWallet from './EWallet';
 import QrReader from './QrReader';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -40,11 +40,11 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="center" element={<Center />} />
-          <Route path="test" element={<Test />} />
-          <Route path="fa" element={<Fa />} />
+         // <Route path="test" element={<Test />} />
+          //<Route path="fa" element={<Fa />} />
           <Route path="qrscan" element={<Qrscan />} />
-          <Route path="pricetag" element={<PriceTag />} />
-          <Route path="ewallet" element={<EWallet />} />
+          //<Route path="pricetag" element={<PriceTag />} />
+          //<Route path="ewallet" element={<EWallet />} />
           <Route path="qrreader" element={<QrReader />} />
 
           {/* Using path="*"" means "match anything", so this route
@@ -89,7 +89,7 @@ function Layout() {
 
         <div className="content2-layout" onClick={Close}>     
           <Outlet />
-          <FixedButton />
+          //<FixedButton />
         </div>
 
     </div>
